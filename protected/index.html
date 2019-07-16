@@ -22,7 +22,8 @@
 
 
     <meta name="description" content="Server settings
-Hexo git post receivePath/home/git/gogs-repositories/lukas/hexoblog.git/hooks/pos...">
+root /home/git/www/public;
+Hexo git post receivePath/home/git/gogs-repositories/l...">
 
 
 
@@ -74,7 +75,7 @@ Hexo git post receivePath/home/git/gogs-repositories/lukas/hexoblog.git/hooks/po
 <![endif]-->
 
 <body>
-    <header class="main-header" style="background-image:url(https://www.lukastomek.info/banner.jpg)">
+    <header class="main-header" style="background-image:url(https://www.lukastomek.info/static/banner.jpg)">
     <div class="main-header-box">
         <!-- <a class="header-avatar" href="/" title='Lukas'>
             <img src="/img/avatar.jpg" alt="Logo avatar" class="img-responsive center-block">
@@ -115,6 +116,7 @@ Hexo git post receivePath/home/git/gogs-repositories/lukas/hexoblog.git/hooks/po
     <h1 class="post-head">Server settings</h1>
     <div class="post-body">
         <p><a href="/protected/Server-settings">Server settings</a></p>
+<p>root /home/git/www/public;</p>
 <h2 id="Hexo-git-post-receive"><a href="#Hexo-git-post-receive" class="headerlink" title="Hexo git post receive"></a>Hexo git post receive</h2><h3 id="Path"><a href="#Path" class="headerlink" title="Path"></a>Path</h3><p>/home/git/gogs-repositories/lukas/hexoblog.git/hooks/post-receive</p>
 <h3 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">export GIT_DIR=/home/git/gogs-repositories/lukas/hexoblog.git</span><br><span class="line">export GIT_WORK_TREE=/home/git/www</span><br><span class="line">echo Running $BASH_SOURCE</span><br><span class="line">set | egrep GIT</span><br><span class="line">echo PWD is $PWD</span><br><span class="line">git  checkout -f</span><br><span class="line">eval /home/git/www/themes/script</span><br></pre></td></tr></table></figure>
 <h3 id="Following-script"><a href="#Following-script" class="headerlink" title="Following script"></a>Following script</h3><h3 id="Path-1"><a href="#Path-1" class="headerlink" title="Path"></a>Path</h3><p>/home/git/www/themes/script</p>
