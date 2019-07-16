@@ -1,0 +1,197 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:SlowCookerUpgrade-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Q_TRIAC_AAG D1
+U 1 1 5A984CC9
+P 5200 3450
+F 0 "D1" H 5325 3475 50  0000 L CNN
+F 1 "Q_TRIAC_AAG" H 5325 3400 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-220_Vertical" V 5275 3475 50  0001 C CNN
+F 3 "" V 5200 3450 50  0001 C CNN
+	1    5200 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L MOC3063M U1
+U 1 1 5A984D38
+P 4400 3400
+F 0 "U1" H 4200 3600 50  0000 L CNN
+F 1 "MOC3063M" H 4400 3600 50  0000 L CNN
+F 2 "Housings_DIP:DIP-6_W7.62mm" H 4200 3200 50  0001 L CIN
+F 3 "" H 4365 3400 50  0001 L CNN
+	1    4400 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 5A984E43
+P 4850 3750
+F 0 "R2" V 4930 3750 50  0000 C CNN
+F 1 "4k7" V 4850 3750 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206" V 4780 3750 50  0001 C CNN
+F 3 "" H 4850 3750 50  0001 C CNN
+	1    4850 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R3
+U 1 1 5A984EE6
+P 4950 3300
+F 0 "R3" V 5030 3300 50  0000 C CNN
+F 1 "470R" V 4950 3300 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206" V 4880 3300 50  0001 C CNN
+F 3 "" H 4950 3300 50  0001 C CNN
+	1    4950 3300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R1
+U 1 1 5A984F57
+P 3850 3300
+F 0 "R1" V 3930 3300 50  0000 C CNN
+F 1 "R" H 3850 3300 50  0000 C CNN
+F 2 "Resistors_SMD:R_1206" V 3780 3300 50  0001 C CNN
+F 3 "" H 3850 3300 50  0001 C CNN
+	1    3850 3300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4700 3500 5050 3500
+Wire Wire Line
+	5050 3500 5050 3550
+Wire Wire Line
+	4850 3600 4850 3500
+Connection ~ 4850 3500
+Wire Wire Line
+	4850 3900 4850 3950
+Wire Wire Line
+	4850 3950 5200 3950
+Wire Wire Line
+	5200 3950 5200 3600
+Wire Wire Line
+	4700 3300 4800 3300
+Wire Wire Line
+	5100 3300 5450 3300
+$Comp
+L LINE #PWR01
+U 1 1 5A9852F5
+P 5200 3950
+F 0 "#PWR01" H 5200 3800 50  0001 C CNN
+F 1 "LINE" H 5200 4100 50  0000 C CNN
+F 2 "" H 5200 3950 50  0001 C CNN
+F 3 "" H 5200 3950 50  0001 C CNN
+	1    5200 3950
+	0    1    1    0   
+$EndComp
+$Comp
+L NEUT #PWR02
+U 1 1 5A98535E
+P 5200 3100
+F 0 "#PWR02" H 5200 2950 50  0001 C CNN
+F 1 "NEUT" H 5200 3250 50  0000 C CNN
+F 2 "" H 5200 3100 50  0001 C CNN
+F 3 "" H 5200 3100 50  0001 C CNN
+	1    5200 3100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4100 3300 4000 3300
+$Comp
+L Conn_01x01 J1
+U 1 1 5A986677
+P 3350 3300
+F 0 "J1" H 3350 3400 50  0000 C CNN
+F 1 "Conn_01x01" H 3350 3200 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x01_Pitch2.00mm" H 3350 3300 50  0001 C CNN
+F 3 "" H 3350 3300 50  0001 C CNN
+	1    3350 3300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Conn_01x01 J2
+U 1 1 5A986724
+P 3750 3500
+F 0 "J2" H 3750 3600 50  0000 C CNN
+F 1 "Conn_01x01" H 3750 3400 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x01_Pitch2.00mm" H 3750 3500 50  0001 C CNN
+F 3 "" H 3750 3500 50  0001 C CNN
+	1    3750 3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Conn_01x01 J3
+U 1 1 5A9867CE
+P 5650 3300
+F 0 "J3" H 5650 3400 50  0000 C CNN
+F 1 "Conn_01x01" H 5650 3200 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x01_Pitch2.00mm" H 5650 3300 50  0001 C CNN
+F 3 "" H 5650 3300 50  0001 C CNN
+	1    5650 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x01 J4
+U 1 1 5A9868D3
+P 5650 3750
+F 0 "J4" H 5650 3850 50  0000 C CNN
+F 1 "Conn_01x01" H 5650 3650 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Angled_1x01_Pitch2.00mm" H 5650 3750 50  0001 C CNN
+F 3 "" H 5650 3750 50  0001 C CNN
+	1    5650 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 3500 4100 3500
+Wire Wire Line
+	3550 3300 3700 3300
+Connection ~ 5200 3300
+Wire Wire Line
+	5450 3750 5200 3750
+Connection ~ 5200 3750
+$EndSCHEMATC

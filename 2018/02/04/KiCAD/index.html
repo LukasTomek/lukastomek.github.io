@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html lang="default">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://lukastomek.github.io">
+    <!--SEO-->
+
+    <meta name="keywords" content="Electronic">
+
+
+    <meta name="description" content="
+Getting Started in KiCadPcbNew Features - Push and shove router
+Import Eagle to KiCADEagle SCH/L...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>KiCAD | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(https://www.lukastomek.info/banner.jpg)">
+    <div class="main-header-box">
+        <!-- <a class="header-avatar" href="/" title='Lukas'>
+            <img src="/img/avatar.jpg" alt="Logo avatar" class="img-responsive center-block">
+        </a> -->
+        
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://lukastomek.github.io">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="KiCAD">
+            
+	            KiCAD
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Electronic/">Electronic</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/02/04</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <img src="/2018/02/04/KiCAD/kicad_logo_paths.svg" title="KiCAD">
+<p><a href="http://docs.kicad-pcb.org/stable/en/getting_started_in_kicad.html" target="_blank" rel="noopener">Getting Started in KiCad</a><br><a href="http://kicad-pcb.org/discover/pcbnew/" target="_blank" rel="noopener">PcbNew Features - Push and shove router</a></p>
+<h3 id="Import-Eagle-to-KiCAD"><a href="#Import-Eagle-to-KiCAD" class="headerlink" title="Import Eagle to KiCAD"></a>Import Eagle to KiCAD</h3><p><a href="https://github.com/lachlanA/eagle-to-kicad" target="_blank" rel="noopener">Eagle SCH/LIB to KiCad SCH/LIB ULP conversion script</a><br><a href="http://cosmosc.com/video/testtital.mp4" target="_blank" rel="noopener">Quick Introduction Video</a><br><a href="https://forum.kicad.info/t/kicad-import-formats-esp-eagle/363/8" target="_blank" rel="noopener">Kicad Import formats, esp. Eagle</a></p>
+<h3 id="KiCAD-Library"><a href="#KiCAD-Library" class="headerlink" title="KiCAD Library"></a>KiCAD Library</h3><p>DC/DC power supply MC34063, and many others.<br><a href="https://github.com/joeferner/kicad-library" target="_blank" rel="noopener">My personal library of KiCad schematic symbols and footprints</a><br><a href="https://github.com/esden/stm32-kicad-lib" target="_blank" rel="noopener">KiCad libraries generated from the STM32Cube database</a><br><a href="https://github.com/KiCad/kicad-footprints" target="_blank" rel="noopener">Official KiCad Footprint Libraries</a><br><a href="https://github.com/kicad/kicad-symbols" target="_blank" rel="noopener">Official KiCad schematic symbol libraries</a><br><a href="https://kicad.github.io/packages3d/" target="_blank" rel="noopener">3D Models</a></p>
+<h3 id="Loading-library-to-KiCAD"><a href="#Loading-library-to-KiCAD" class="headerlink" title="Loading library to KiCAD"></a>Loading library to KiCAD</h3><p><a href="https://forum.kicad.info/t/how-to-make-kicad-schematic-libraries-load-with-a-relative-path/2639/2" target="_blank" rel="noopener">How to make Kicad schematic libraries load with a relative path</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                Reprint statement：For commercial reprint, please contact the author for authorization. For non-commercial reprint, please indicate the source. © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/02/04/Install-Eagle-7-7-0-64bit-Debian-9/" class="pre-post btn btn-default" title="Install Eagle 7.7.0 64bit Debian 9">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">Prev</span>
+            <span class="hidden-xs">Install Eagle 7.7.0 64bit Debian 9</span>
+        </a>
+    
+    
+        <a href="/2018/02/01/Bateries-datasheets/" class="next-post btn btn-default" title="Bateries datasheets">
+            <span class="hidden-lg">Next</span>
+            <span class="hidden-xs">Bateries datasheets</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <!--<div id="comments">
+        
+   <p>Comment system is not open, can't comment！</p>
+
+
+    </div>-->
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Import-Eagle-to-KiCAD"><span class="toc-text">Import Eagle to KiCAD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KiCAD-Library"><span class="toc-text">KiCAD Library</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Loading-library-to-KiCAD"><span class="toc-text">Loading library to KiCAD</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

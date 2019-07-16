@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html lang="default">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://lukastomek.github.io">
+    <!--SEO-->
+
+    <meta name="keywords" content="CNC">
+
+
+    <meta name="description" content="Working SolutionInstall Inscape with Python support
+Export trace as dxf from Inkscape acording tu...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Image to G-Code | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(https://www.lukastomek.info/banner.jpg)">
+    <div class="main-header-box">
+        <!-- <a class="header-avatar" href="/" title='Lukas'>
+            <img src="/img/avatar.jpg" alt="Logo avatar" class="img-responsive center-block">
+        </a> -->
+        
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://lukastomek.github.io">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Image to G-Code">
+            
+	            Image to G-Code
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/CNC/">CNC</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/09/25</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="Working-Solution"><a href="#Working-Solution" class="headerlink" title="Working Solution"></a>Working Solution</h2><p>Install Inscape with Python support<br><img src="/2018/09/25/Image-to-G-Code/InkscapeInstall.png" title="InkscapeInstall"></p>
+<p>Export trace as dxf from Inkscape acording tutorial: <a href="https://opentinkers.com/tutorials/gcode_creation/" target="_blank" rel="noopener">How to create a GCode file from a JPG or DXF</a>.<br>Open in LibreCAD do what is neccesary scale move etc.<br>Export as MakerCAM SVG.<br><img src="/2018/09/25/Image-to-G-Code/ExportAsMakerCAM_SVG.png" title="ExportAsMakerCAM_SVG"></p>
+<p>Import SVG in FlatCAM.<br>Continue in FlatCAM.</p>
+<h3 id="Tested-on"><a href="#Tested-on" class="headerlink" title="Tested on"></a>Tested on</h3><p><a href="https://inkscape.org/en/release/0.92.3/windows/64-bit/" target="_blank" rel="noopener">Inscape 0.92.3 x64 2405546, 2018-03-11</a><br><a href="https://github.com/LibreCAD/LibreCAD/releases/tag/2.1.3" target="_blank" rel="noopener">LibreCAD 2.1.3</a><br><a href="https://bitbucket.org/jpcgt/flatcam/downloads/" target="_blank" rel="noopener">FlatCAM 8.5 2016/07</a></p>
+<p>If you want to use <a href>DXF2GCODE</a> you have to export from Inkscape without LWPOLYLINE.<br><img src="/2018/09/25/Image-to-G-Code/DxfExportSettings.png" title="DxfExportSettings"></p>
+<p>Inspired by<br><a href="https://opentinkers.com/tutorials/gcode_creation/" target="_blank" rel="noopener">How to create a GCode file from a JPG or DXF</a></p>
+<h2 id="Path-to-script-in-LinuxCNC-GitHub"><a href="#Path-to-script-in-LinuxCNC-GitHub" class="headerlink" title="Path to script in LinuxCNC GitHub"></a>Path to script in LinuxCNC GitHub</h2><p><a href="https://github.com/LinuxCNC/linuxcnc/tree/master/src/emc/usr_intf/axis/scripts" target="_blank" rel="noopener">image-to-gcode.py</a></p>
+<h3 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-tk python-imaging-tk</span><br></pre></td></tr></table></figure>
+<p>Alternatively using pip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install python-tk pillow</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/jensenj08/gcode" target="_blank" rel="noopener">gcode Python module</a></p>
+<p><a href="https://forum.linuxcnc.org/38-general-linuxcnc-questions/28138-new-scrypt-image-to-gcode-py-how-to-put-on-git" target="_blank" rel="noopener">Update script</a></p>
+<h3 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h3><p><a href="http://www.linuxcnc.org/docs/2.4/html/gui_image-to-gcode.html#r1" target="_blank" rel="noopener">http://www.linuxcnc.org/docs/2.4/html/gui_image-to-gcode.html#r1</a></p>
+<h2 id="Another-tool"><a href="#Another-tool" class="headerlink" title="Another tool"></a>Another tool</h2><p><a href="https://opentinkers.com/tutorials/gcode_creation/" target="_blank" rel="noopener">https://opentinkers.com/tutorials/gcode_creation/</a><br><a href="https://github.com/sjkelly/image_to_gcode" target="_blank" rel="noopener">Image to gcode</a><br><a href="http://www.thuijzer.nl/image2gcode/" target="_blank" rel="noopener">http://www.thuijzer.nl/image2gcode/</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                Reprint statement：For commercial reprint, please contact the author for authorization. For non-commercial reprint, please indicate the source. © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/09/27/Open-Virtual-Hard-Disk-Images/" class="pre-post btn btn-default" title="Open Virtual Hard Disk Images">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">Prev</span>
+            <span class="hidden-xs">Open Virtual Hard Disk Images</span>
+        </a>
+    
+    
+        <a href="/2018/09/24/FlatCAM/" class="next-post btn btn-default" title="FlatCAM">
+            <span class="hidden-lg">Next</span>
+            <span class="hidden-xs">FlatCAM</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <!--<div id="comments">
+        
+   <p>Comment system is not open, can't comment！</p>
+
+
+    </div>-->
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Working-Solution"><span class="toc-text">Working Solution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tested-on"><span class="toc-text">Tested on</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Path-to-script-in-LinuxCNC-GitHub"><span class="toc-text">Path to script in LinuxCNC GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Requirements"><span class="toc-text">Requirements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Documentation"><span class="toc-text">Documentation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Another-tool"><span class="toc-text">Another tool</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html lang="default">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://lukastomek.github.io">
+    <!--SEO-->
+
+    <meta name="keywords" content="Linux,SSH">
+
+
+    <meta name="description" content="server behind natHow to access a Linux server behind NAT via reverse SSH tunnelautossh in backgro...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Tunel | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(https://www.lukastomek.info/banner.jpg)">
+    <div class="main-header-box">
+        <!-- <a class="header-avatar" href="/" title='Lukas'>
+            <img src="/img/avatar.jpg" alt="Logo avatar" class="img-responsive center-block">
+        </a> -->
+        
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://lukastomek.github.io">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Tunel">
+            
+	            Tunel
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Linux/">Linux</a> <a class="tag-link" href="/tags/SSH/">SSH</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/01/29</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="server-behind-nat"><a href="#server-behind-nat" class="headerlink" title="server behind nat"></a>server behind nat</h3><p><a href="http://xmodulo.com/access-linux-server-behind-nat-reverse-ssh-tunnel.html" target="_blank" rel="noopener">How to access a Linux server behind NAT via reverse SSH tunnel</a><br><a href="https://serverfault.com/questions/534229/autossh-in-background-does-not-work" target="_blank" rel="noopener">autossh in background does not work</a></p>
+<p><a href="https://superuser.com/questions/121435/is-it-possible-to-host-a-web-server-from-behind-a-nat" target="_blank" rel="noopener">https://superuser.com/questions/121435/is-it-possible-to-host-a-web-server-from-behind-a-nat</a></p>
+<p><a href="https://en.wikipedia.org/wiki/HTTP_tunnel#HTTP_CONNECT_tunneling" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/HTTP_tunnel#HTTP_CONNECT_tunneling</a></p>
+<h3 id="Tunnel"><a href="#Tunnel" class="headerlink" title="Tunnel"></a>Tunnel</h3><p><a href="http://neophob.com/2006/10/gnu-httptunnel-v33-windows-binaries/" target="_blank" rel="noopener">GNU HTTPtunnel v3.3 Windows Binaries</a><br><a href="https://daniel.haxx.se/docs/sshproxy.html" target="_blank" rel="noopener">https://daniel.haxx.se/docs/sshproxy.html</a><br><a href="http://sebsauvage.net/punching/" target="_blank" rel="noopener">Punching holes into firewalls</a><br><a href="https://sergvergara.files.wordpress.com/2011/04/http_tunnel.pdf" target="_blank" rel="noopener">HTTP Tunnel</a><br><a href="http://http-tunnel.sourceforge.net" target="_blank" rel="noopener">http://http-tunnel.sourceforge.net</a><br><a href="https://github.com/larsbrinkhoff/httptunnel" target="_blank" rel="noopener">https://github.com/larsbrinkhoff/httptunnel</a><br><a href="https://en.wikipedia.org/wiki/HTTP_tunnel" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/HTTP_tunnel</a><br><a href="https://en.wikipedia.org/wiki/BOSH_(protocol" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/BOSH_(protocol)</a>)<br><a href="https://www.the-hawkes.de/a-web-proxy-with-tinyproxy-and-ssh-tunnel.html" target="_blank" rel="noopener">Web-proxy with Tinyproxy and ssh-tunnel</a></p>
+<p><a href="https://github.com/proxytunnel/proxytunnel" target="_blank" rel="noopener">https://github.com/proxytunnel/proxytunnel</a></p>
+<p><a href="https://askubuntu.com/questions/107173/is-it-possible-to-ssh-through-port-80" target="_blank" rel="noopener">https://askubuntu.com/questions/107173/is-it-possible-to-ssh-through-port-80</a><br><a href="https://serverfault.com/questions/734808/reach-server-via-ssh-tunnel-and-nginx-proxy" target="_blank" rel="noopener">https://serverfault.com/questions/734808/reach-server-via-ssh-tunnel-and-nginx-proxy</a><br><a href="https://askubuntu.com/questions/107173/is-it-possible-to-ssh-through-port-80" target="_blank" rel="noopener">https://askubuntu.com/questions/107173/is-it-possible-to-ssh-through-port-80</a><br><a href="https://gist.github.com/fnando/1101211" target="_blank" rel="noopener">Nginx configuration for SSH tunnel</a><br><a href="https://www.ssh.com/ssh/tunneling/example" target="_blank" rel="noopener">https://www.ssh.com/ssh/tunneling/example</a></p>
+<p><a href="https://anands.github.io/blog/2015/11/03/using-reverse-ssh-tunneling-to-expose-services-on-private-networks-to-public-internet/" target="_blank" rel="noopener">https://anands.github.io/blog/2015/11/03/using-reverse-ssh-tunneling-to-expose-services-on-private-networks-to-public-internet/</a><br><a href="https://stackoverflow.com/questions/12845595/trouble-ssh-tunneling-to-remote-server" target="_blank" rel="noopener">https://stackoverflow.com/questions/12845595/trouble-ssh-tunneling-to-remote-server</a><br><a href="https://stackoverflow.com/questions/16838588/how-to-make-apache-recognize-domain-when-connecting-through-ssh-tunnel" target="_blank" rel="noopener">https://stackoverflow.com/questions/16838588/how-to-make-apache-recognize-domain-when-connecting-through-ssh-tunnel</a><br><a href="https://www.linuxquestions.org/questions/linux-server-73/ssh-tunnel-to-web-site-behind-nginx-proxy-4175492868/" target="_blank" rel="noopener">https://www.linuxquestions.org/questions/linux-server-73/ssh-tunnel-to-web-site-behind-nginx-proxy-4175492868/</a><br><a href="https://sebastian.korotkiewicz.eu/2016/10/09/nginx-configuration-for-ssh-tunnel/" target="_blank" rel="noopener">https://sebastian.korotkiewicz.eu/2016/10/09/nginx-configuration-for-ssh-tunnel/</a></p>
+<h3 id="Stunnel"><a href="#Stunnel" class="headerlink" title="Stunnel"></a>Stunnel</h3><p><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-ssl-tunnel-using-stunnel-on-ubuntu" target="_blank" rel="noopener">How To Set Up an SSL Tunnel Using Stunnel on Ubuntu</a></p>
+<h3 id="PHP-Proxy"><a href="#PHP-Proxy" class="headerlink" title="PHP Proxy"></a>PHP Proxy</h3><p><a href="https://www.php-proxy.com/" target="_blank" rel="noopener">https://www.php-proxy.com/</a><br><a href="https://github.com/Athlon1600/php-proxy-app" target="_blank" rel="noopener">https://github.com/Athlon1600/php-proxy-app</a><br><a href="https://github.com/365cent/365" target="_blank" rel="noopener">https://github.com/365cent/365</a></p>
+<h3 id="verything-you-need-to-know-to-Build-a-simple-HTTP-server-from-scratch"><a href="#verything-you-need-to-know-to-Build-a-simple-HTTP-server-from-scratch" class="headerlink" title="verything you need to know to Build a simple HTTP server from scratch"></a>verything you need to know to Build a simple HTTP server from scratch</h3><p><a href="https://medium.com/from-the-scratch/http-server-what-do-you-need-to-know-to-build-a-simple-http-server-from-scratch-d1ef8945e4fa" target="_blank" rel="noopener">https://medium.com/from-the-scratch/http-server-what-do-you-need-to-know-to-build-a-simple-http-server-from-scratch-d1ef8945e4fa</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                Reprint statement：For commercial reprint, please contact the author for authorization. For non-commercial reprint, please indicate the source. © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/01/29/Linux-Add-User/" class="pre-post btn btn-default" title="Linux Add User">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">Prev</span>
+            <span class="hidden-xs">Linux Add User</span>
+        </a>
+    
+    
+        <a href="/2018/01/24/WordPress-and-SSL/" class="next-post btn btn-default" title="WordPress and SSL">
+            <span class="hidden-lg">Next</span>
+            <span class="hidden-xs">WordPress and SSL</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <!--<div id="comments">
+        
+   <p>Comment system is not open, can't comment！</p>
+
+
+    </div>-->
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#server-behind-nat"><span class="toc-text">server behind nat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tunnel"><span class="toc-text">Tunnel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stunnel"><span class="toc-text">Stunnel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP-Proxy"><span class="toc-text">PHP Proxy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#verything-you-need-to-know-to-Build-a-simple-HTTP-server-from-scratch"><span class="toc-text">verything you need to know to Build a simple HTTP server from scratch</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

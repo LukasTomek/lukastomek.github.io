@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html lang="default">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://lukastomek.github.io">
+    <!--SEO-->
+
+    <meta name="keywords" content="Python,Excel">
+
+
+    <meta name="description" content="Python Excel Tutorial: The Definitive Guide
+General infoWorking with Excel Files in Python
+openpy...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Python write to Excel | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(https://www.lukastomek.info/banner.jpg)">
+    <div class="main-header-box">
+        <!-- <a class="header-avatar" href="/" title='Lukas'>
+            <img src="/img/avatar.jpg" alt="Logo avatar" class="img-responsive center-block">
+        </a> -->
+        
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://lukastomek.github.io">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Python write to Excel">
+            
+	            Python write to Excel
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Excel/">Excel</a> <a class="tag-link" href="/tags/Python/">Python</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/04/21</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><a href="https://www.datacamp.com/community/tutorials/python-excel-tutorial" target="_blank" rel="noopener">Python Excel Tutorial: The Definitive Guide</a></p>
+<p>General info<br><a href="http://www.python-excel.org/" target="_blank" rel="noopener">Working with Excel Files in Python</a></p>
+<p><a href="https://openpyxl.readthedocs.io/en/stable/" target="_blank" rel="noopener">openpyxl - A Python library to read/write Excel 2010 xlsx/xlsm files</a></p>
+<p><a href="http://xlsxwriter.readthedocs.io/working_with_pandas.html" target="_blank" rel="noopener">Working with Python Pandas and XlsxWriter</a></p>
+<h2 id="Write-to-Excel-using-COM-interface"><a href="#Write-to-Excel-using-COM-interface" class="headerlink" title="Write to Excel using COM interface"></a>Write to Excel using COM interface</h2><p><a href="http://pythonexcels.com/python-excel-mini-cookbook/" target="_blank" rel="noopener">Python Excel Mini Cookbook</a></p>
+<h3 id="enumeration-using-COM-interface"><a href="#enumeration-using-COM-interface" class="headerlink" title="enumeration using COM interface"></a>enumeration using COM interface</h3><p><a href="https://stackoverflow.com/questions/1646230/how-do-i-import-a-com-object-namespace-enumeration-in-python" target="_blank" rel="noopener">How do I import a COM object namespace/enumeration in Python?</a></p>
+<h3 id="Using-COM-interface"><a href="#Using-COM-interface" class="headerlink" title="Using COM interface"></a>Using COM interface</h3><p><a href="http://docs.activestate.com/activepython/2.4/pywin32/html/com/win32com/HTML/QuickStartClientCom.html" target="_blank" rel="noopener">Quick Start to Client side COM and Python</a></p>
+<p><a href="https://miamioh.instructure.com/courses/38817/pages/importing-data-and-writing-files" target="_blank" rel="noopener">Importing Data &amp; Writing Files</a></p>
+<p><a href="https://www.analyticsvidhya.com/blog/2016/01/12-pandas-techniques-python-data-manipulation/" target="_blank" rel="noopener">12 Useful Pandas Techniques in Python for Data Manipulation</a></p>
+<p><a href="http://xlsxwriter.readthedocs.io/" target="_blank" rel="noopener">Creating Excel files with Python and XlsxWriter</a></p>
+<p>The tutorial for xlrd, xlwt and xlutils<br><a href="https://github.com/python-excel" target="_blank" rel="noopener">python-excel</a></p>
+<p><a href="https://stackoverflow.com/questions/13437727/python-write-to-excel-spreadsheet" target="_blank" rel="noopener">Python - Write to Excel Spreadsheet</a></p>
+<p><a href="https://stackoverflow.com/questions/5568319/use-python-to-generate-graph-in-excel" target="_blank" rel="noopener">use python to generate graph in excel</a></p>
+<p>matplotlib not realy excel thing<br><a href="https://matplotlib.org/" target="_blank" rel="noopener"> You can generate plots, histograms, power spectra, bar charts, errorcharts, scatterplots,</a></p>
+<p>Maybe we can find the same class in openpyxl.<br><a href="http://xlsxwriter.readthedocs.io/chart.html" target="_blank" rel="noopener">The Chart Class</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                Reprint statement：For commercial reprint, please contact the author for authorization. For non-commercial reprint, please indicate the source. © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/04/23/Data-storage-in-Python/" class="pre-post btn btn-default" title="Data storage in Python">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">Prev</span>
+            <span class="hidden-xs">Data storage in Python</span>
+        </a>
+    
+    
+        <a href="/2018/04/18/parse-map-file/" class="next-post btn btn-default" title="parse map file">
+            <span class="hidden-lg">Next</span>
+            <span class="hidden-xs">parse map file</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <!--<div id="comments">
+        
+   <p>Comment system is not open, can't comment！</p>
+
+
+    </div>-->
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Write-to-Excel-using-COM-interface"><span class="toc-text">Write to Excel using COM interface</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#enumeration-using-COM-interface"><span class="toc-text">enumeration using COM interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-COM-interface"><span class="toc-text">Using COM interface</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

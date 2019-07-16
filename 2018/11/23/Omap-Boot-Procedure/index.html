@@ -1,0 +1,299 @@
+<!DOCTYPE HTML>
+<html lang="default">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://lukastomek.github.io">
+    <!--SEO-->
+
+    <meta name="keywords" content="Samsung">
+
+
+    <meta name="description" content="twl4030root/drivers/gpio/gpio-twl4030.chttp://www.ti.com/tool/twl4030sw-linux
+LinkerTI Linker Com...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Omap Boot Procedure | Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(https://www.lukastomek.info/banner.jpg)">
+    <div class="main-header-box">
+        <!-- <a class="header-avatar" href="/" title='Lukas'>
+            <img src="/img/avatar.jpg" alt="Logo avatar" class="img-responsive center-block">
+        </a> -->
+        
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://lukastomek.github.io">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Omap Boot Procedure">
+            
+	            Omap Boot Procedure
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+                    <a class="tag-link" href="/tags/Samsung/">Samsung</a>
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/11/23</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="twl4030"><a href="#twl4030" class="headerlink" title="twl4030"></a>twl4030</h2><p><a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/gpio/gpio-twl4030.c" target="_blank" rel="noopener">root/drivers/gpio/gpio-twl4030.c</a><br><a href="http://www.ti.com/tool/twl4030sw-linux" target="_blank" rel="noopener">http://www.ti.com/tool/twl4030sw-linux</a></p>
+<h2 id="Linker"><a href="#Linker" class="headerlink" title="Linker"></a>Linker</h2><p><a href="http://software-dl.ti.com/ccs/esd/documents/sdto_cgt_Linker-Command-File-Primer.html" target="_blank" rel="noopener">TI Linker Command File Primer</a><br><a href="http://processors.wiki.ti.com/index.php/Linker_CMD_Files_for_CCS" target="_blank" rel="noopener">Linker CMD Files for CCS</a></p>
+<h2 id="Kernels"><a href="#Kernels" class="headerlink" title="Kernels"></a>Kernels</h2><p><a href="https://rocketboards.org/foswiki/Documentation/PreloaderUbootCustomization131" target="_blank" rel="noopener">Preloader and U-Boot Customization - v13.1</a><br><a href="https://embexus.com/2017/05/07/fast-boot-linux-with-u-boot-falcon-mode/" target="_blank" rel="noopener">Fast Boot Linux with u-Boot Falcon Mode</a><br><a href="http://xillybus.com/tutorials/u-boot-image-altera-soc" target="_blank" rel="noopener">Preparing a Uboot image for Altera’s Cyclone V SoC FPGA</a></p>
+<h3 id="Repack-kernel"><a href="#Repack-kernel" class="headerlink" title="Repack kernel"></a>Repack kernel</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./umkbootimg <span class="string">'/home/lukas/SamsungP5100/BootImg/boot.img'</span></span><br><span class="line">./unpack_ramdisk initramfs.cpio.gz</span><br><span class="line">./repack_ramdisk ramdisk_ initramfs.cpio.gz</span><br><span class="line">./mkbootimg --kernel zImage --ramdisk initramfs.cpio.gz --base 0x80000000 --cmdline <span class="string">'console=ttyO3,115200n8 mem=1024M androidboot.console=ttyO3 vram=20M omapfb.vram=0:16M'</span> -o new_boot.img</span><br></pre></td></tr></table></figure>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=2670512" target="_blank" rel="noopener">AnyKernel2 - Easily Mod ROM Ramdisk + Pack zImage </a></p>
+<p><a href="https://github.com/osm0sis/AnyKernel2" target="_blank" rel="noopener">https://github.com/osm0sis/AnyKernel2</a></p>
+<p><a href="https://forum.xda-developers.com/galaxy-tab-2/galaxy-tab-2-unified/kernel-anykernel-t3484739" target="_blank" rel="noopener">[KERNEL] [UNIFIED] Anykernel</a></p>
+<p><a href="https://wiki.lineageos.org/devices/espresso3g/build" target="_blank" rel="noopener">https://wiki.lineageos.org/devices/espresso3g/build</a></p>
+<p><a href="https://github.com/LineageOS/android_device_samsung_espressowifi" target="_blank" rel="noopener">https://github.com/LineageOS/android_device_samsung_espressowifi</a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=2691477" target="_blank" rel="noopener">[DEV][WIP][OS] Ubuntu Linux on Galaxy Tab 2 GT-P31xx</a></p>
+<h3 id="Boot-Arguments"><a href="#Boot-Arguments" class="headerlink" title="Boot Arguments"></a>Boot Arguments</h3><p><a href="https://www.denx.de/wiki/view/DULG/LinuxKernelArgs" target="_blank" rel="noopener">Passing Kernel Arguments</a></p>
+<h2 id="Ramdisk"><a href="#Ramdisk" class="headerlink" title="Ramdisk"></a>Ramdisk</h2><p><a href="https://stackoverflow.com/questions/35336940/understand-u-boot-memory-footprint" target="_blank" rel="noopener">Understand U-Boot memory footprint</a></p>
+<p><a href="https://engineering.textnow.com/android-boot-and-recovery-images-fd756e234c1f" target="_blank" rel="noopener">Android Boot and Recovery Images</a></p>
+<p><a href="http://omapedia.org/wiki/Support_Tools" target="_blank" rel="noopener">http://omapedia.org/wiki/Support_Tools</a></p>
+<p><a href="https://www.digikey.com/eewiki/display/linuxonarm/PandaBoard" target="_blank" rel="noopener">https://www.digikey.com/eewiki/display/linuxonarm/PandaBoard</a></p>
+<p><a href="http://etutorials.org/Linux+systems/embedded+linux+systems/Chapter+9.+Setting+Up+the+Bootloader/9.5+U-Boot/" target="_blank" rel="noopener">9.5 U-Boot</a></p>
+<p><a href="http://processors.wiki.ti.com/index.php/Booting_Linux_kernel_using_U-Boot" target="_blank" rel="noopener">TI Booting Linux kernel using U-Boot</a><br><a href="http://processors.wiki.ti.com/index.php/Linux_Core_U-Boot_User&#39;s_Guide" target="_blank" rel="noopener">Linux Core U-Boot User’s Guide</a></p>
+<h2 id="NookTablet"><a href="#NookTablet" class="headerlink" title="NookTablet"></a>NookTablet</h2><p><a href="https://github.com/Ar2000jp/u-boot" target="_blank" rel="noopener">https://github.com/Ar2000jp/u-boot</a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=1423009" target="_blank" rel="noopener">[MOD]UART Debugging Connection</a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?p=21371828#post21371828" target="_blank" rel="noopener">Partitons, Functions, Security, Hardware, Kernels and Methods</a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=1441930" target="_blank" rel="noopener">The First bootable SDCard for Nook Tablet</a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=1522226" target="_blank" rel="noopener"> Say hi to “CyanoBoot” – a 2nd bootloader/w menu aka “ub2”</a></p>
+<p><a href="https://www.xda-developers.com/cyanoboot-for-nook-tablet-released/" target="_blank" rel="noopener">CyanoBoot for Nook Tablet Released</a></p>
+<p><a href="https://github.com/CMNookTablet/acclaim_cyanoboot" target="_blank" rel="noopener">U-boot for NookTablet</a></p>
+<p><a href="https://github.com/succulent/acclaim_recovery_sdcard" target="_blank" rel="noopener">https://github.com/succulent/acclaim_recovery_sdcard</a></p>
+<p><a href="https://iamafanof.wordpress.com/2012/11/11/how-to-guide-bootable-cm7cm9cm10-sdcard-for-nook-tablet/" target="_blank" rel="noopener">How to Guide: Bootable (CM7/CM9/CM10) SDCard for Nook Tablet</a></p>
+<p><a href="https://iamafanof.wordpress.com/2012/05/17/how-to-guide-dual-boot-cm7cm9-sdcard-for-nook-tablet/" target="_blank" rel="noopener">https://iamafanof.wordpress.com/2012/05/17/how-to-guide-dual-boot-cm7cm9-sdcard-for-nook-tablet/</a></p>
+<p><a href="https://iamafanof.wordpress.com/2013/02/18/cm10-1-jellybean-android-4-2-2-for-nook-tablet-0218/" target="_blank" rel="noopener">https://iamafanof.wordpress.com/2013/02/18/cm10-1-jellybean-android-4-2-2-for-nook-tablet-0218/</a></p>
+<p><a href="https://forum.xda-developers.com/showpost.php?p=23591839&amp;postcount=1" target="_blank" rel="noopener">Dual-Boot SDCard | CM7.2 Source | Guides | Recovery | Stock 1.4.2 </a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=1444630" target="_blank" rel="noopener"> BCB, BootCnt, and the bootdata partition</a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=1378886&amp;page=28" target="_blank" rel="noopener">[DISCUSSION] on the boot loader [CRACKED!]</a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=1440438" target="_blank" rel="noopener"> Bootloader cracked and next steps</a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=1562130" target="_blank" rel="noopener">[UNBRICK] Repartition, Reformat, Restore and Rescue SDcard</a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=1554039&amp;page=3" target="_blank" rel="noopener"> B&amp;N repartition SD card Boot</a></p>
+<p><a href="https://forum.xda-developers.com/showthread.php?t=1517513&amp;page=3" target="_blank" rel="noopener">https://forum.xda-developers.com/showthread.php?t=1517513&amp;page=3</a></p>
+<p>Search: Posts Made By: bauwks</p>
+<p><a href="https://forum.xda-developers.com/search.php?searchid=452174729" target="_blank" rel="noopener">https://forum.xda-developers.com/search.php?searchid=452174729</a></p>
+<p><a href="https://patchwork.kernel.org/patch/7681601/" target="_blank" rel="noopener">https://patchwork.kernel.org/patch/7681601/</a><br><a href="https://training.ti.com/linux-board-porting-series-module-4-linuxu-boot-source-code-structure" target="_blank" rel="noopener">https://training.ti.com/linux-board-porting-series-module-4-linuxu-boot-source-code-structure</a><br><a href="https://forum.xda-developers.com/nook-hd/development/hd-boot-v2014-07-boot-scripting-t2888098" target="_blank" rel="noopener">https://forum.xda-developers.com/nook-hd/development/hd-boot-v2014-07-boot-scripting-t2888098</a><br><a href="https://forum.xda-developers.com/galaxy-s2/general/uboot-bootloader-true-multiboot-t1680898" target="_blank" rel="noopener">https://forum.xda-developers.com/galaxy-s2/general/uboot-bootloader-true-multiboot-t1680898</a><br><a href="https://forum.xda-developers.com/galaxy-nexus/development/bootloader-boot-multi-boot-support-t2201146" target="_blank" rel="noopener">https://forum.xda-developers.com/galaxy-nexus/development/bootloader-boot-multi-boot-support-t2201146</a></p>
+<p><a href="http://omappedia.org/wiki/4AJ.2.5_OMAP4_Jelly_Bean_Release_Notes" target="_blank" rel="noopener">http://omappedia.org/wiki/4AJ.2.5_OMAP4_Jelly_Bean_Release_Notes</a></p>
+<p><a href="http://xillybus.com/tutorials/uboot-hacking-howto-1" target="_blank" rel="noopener">http://xillybus.com/tutorials/uboot-hacking-howto-1</a></p>
+<p><a href="https://rocketboards.org/foswiki/Documentation/PreloaderUbootCustomization131" target="_blank" rel="noopener">https://rocketboards.org/foswiki/Documentation/PreloaderUbootCustomization131</a></p>
+<p><a href="https://www.instructables.com/id/Fixing-samsung-galaxy-tab-broken-cable-charger/" target="_blank" rel="noopener">Fixing Samsung Galaxy Tab Broken Cable Charger</a><br><a href="https://forum.xda-developers.com/galaxy-nexus/development/bootloader-boot-multi-boot-support-t2201146" target="_blank" rel="noopener">U-boot for the multi-boot support</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                Reprint statement：For commercial reprint, please contact the author for authorization. For non-commercial reprint, please indicate the source. © <a href target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/12/20/SSD-Linux-Settings/" class="pre-post btn btn-default" title="SSD Linux Settings">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">Prev</span>
+            <span class="hidden-xs">SSD Linux Settings</span>
+        </a>
+    
+    
+        <a href="/2018/11/23/SD-Card/" class="next-post btn btn-default" title="SD Card">
+            <span class="hidden-lg">Next</span>
+            <span class="hidden-xs">SD Card</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <!--<div id="comments">
+        
+   <p>Comment system is not open, can't comment！</p>
+
+
+    </div>-->
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#twl4030"><span class="toc-text">twl4030</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linker"><span class="toc-text">Linker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kernels"><span class="toc-text">Kernels</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Repack-kernel"><span class="toc-text">Repack kernel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boot-Arguments"><span class="toc-text">Boot Arguments</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ramdisk"><span class="toc-text">Ramdisk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NookTablet"><span class="toc-text">NookTablet</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
